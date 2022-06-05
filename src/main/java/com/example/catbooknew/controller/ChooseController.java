@@ -50,10 +50,10 @@ public class ChooseController {
         map.put("first_cat", cat1);
         map.put("second_cat", cat2);
 
-        return "";
+        return "HomePage";
     }
 
-    @PostMapping
+    @PostMapping("/chosen")
     public String chosen(@RequestBody ChosenImageInfo chosenImageInfo) {
         Optional<User> optionalUser = userRepository.findById(1);
         if (optionalUser.isEmpty()) {
