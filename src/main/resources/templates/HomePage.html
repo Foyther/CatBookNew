@@ -7,18 +7,18 @@
     <title>CatChooser!</title>
 </head>
 <body>
-<h1 style="color: #5e9ca0;">Welcome to the CatChooser!</h1>
-<h2 style="color: #2e6c80;">You can choose one of the cats that you like the most.</h2>
+<h1 style="color: #12d7e5;">Welcome to the CatChooser!</h1>
+<h2 style="color: #174a59;">You can choose one of the cats that you like the most.</h2>
 <p>
+<form th:action="@{/chosen}" th:method="post" th:object="${chosenImageInfo}">
+    <input>
     <button th:type="text" th:value="${first_cat.name}">
         <img th:src="${first_cat.photoUrl}" th:value="*{first_cat.name}"
              width="512" height="512" th:title="${first_cat.name}"></button>
-    <button th:type="text" th:value="${second_cat.name}">
-        <img th:src="${second_cat.photoUrl}" th:value="*{second_cat.name}"
-             width="512" height="512" th:title="${second_cat.name}"></button>
+</form>
+<button th:type="text" th:value="${second_cat.name}">
+    <img th:src="${second_cat.photoUrl}" th:value="*{second_cat.name}"
+         width="512" height="512" th:title="${second_cat.name}"></button>
 </p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><strong>&nbsp;</strong></p>
 </body>
 </html>

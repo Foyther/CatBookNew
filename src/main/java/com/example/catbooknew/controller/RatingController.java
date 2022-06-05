@@ -9,20 +9,24 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/choose")
+@RequestMapping("/rating")
 public class RatingController {
 
     private CatRepository catRepository;
-    private CatPairRepository catPairRepository;
 
     @RequestMapping("")
     public String showRating(ModelMap map) {
-        List<Cat> topTen = catRepository.getTopBy();
-        map.put("top_ten", topTen);
-        return "";
+        Optional<List<Cat>> topTen = catRepository.getPopularCatInTheAmountOf();
+        if (topTen.isEmpty()){
+            throw new IllegalArgumentException("Not found cat's photo");
+        }
+        List<Cat> cats = topTen.get();
+        map.put("top_ten", cats);
+        return "showRating";
     }
 
 }
