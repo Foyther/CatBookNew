@@ -5,12 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Set;
 
-public interface CatPairRepository extends JpaRepository<CatPair, String> {
-    @Override
-    <S extends CatPair> S save(S entity);
+public interface CatPairRepository extends JpaRepository<CatPair, Integer> {
 
-    @Query(value = "SELECT cat_pair FROM CatPair cat_pair ORDER BY cat_pair.id")
-    CatPair findAllOrderById();
-
+    @Query(value = "SELECT cat_pairs FROM CatPair cat_pairs where cat_pairs.id not in (:catPairsId)")
+    List<CatPair> findAllWithoutUsedPairs(Set<Integer> catPairsId);
 }

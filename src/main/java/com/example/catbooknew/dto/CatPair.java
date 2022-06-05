@@ -18,11 +18,14 @@ public class CatPair implements Serializable {
     private Integer id;
 
     @NotNull
-    private String firstCatId;
+    private Integer firstCatId;
 
     @NotNull
-    private String secondCatId;
+    private Integer secondCatId;
 
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<User> users;
+
+    public CatPair() {
+    }
 }

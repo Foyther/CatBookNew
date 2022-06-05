@@ -20,9 +20,9 @@ public class User implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(
-            fetch = FetchType.EAGER,
-            cascade = {CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE}
-    )
+    @ManyToMany(fetch = FetchType.LAZY)
     private Set<CatPair> catPairs;
+
+    public User() {
+    }
 }

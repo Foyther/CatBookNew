@@ -25,4 +25,6 @@ public class Cat implements Serializable {
 
     @Column(name = "num_of_voices")
     private Long numOfVoices;
+
+    public Cat() {}
 }

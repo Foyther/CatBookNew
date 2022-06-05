@@ -13,7 +13,7 @@ public class CatService {
 
     private CatRepository catRepository;
 
-    public void updateCatRating(String catId){
+    public void updateCatRating(Integer catId){
         Cat cat = catRepository.findById(catId).get();
         cat.setNumOfVoices(cat.getNumOfVoices() + 1);
         catRepository.save(cat);

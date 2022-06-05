@@ -7,9 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface CatRepository extends CrudRepository<Cat, String> {
+public interface CatRepository extends CrudRepository<Cat, Integer> {
     @Override
-    Optional<Cat> findById(String s);
+    Optional<Cat> findById(Integer integer);
 
     @Override
     <S extends Cat> S save(S entity);

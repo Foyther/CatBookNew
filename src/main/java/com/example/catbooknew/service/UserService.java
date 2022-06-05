@@ -16,9 +16,12 @@ public class UserService {
     CatPairRepository catPairRepository;
     UserRepository userRepository;
 
-    public void chosenPairForUser(User user, String catPairId){
+    public void chosenPairForUser(User user, Integer catPairId){
         Set<CatPair> catPairs = user.getCatPairs();
         CatPair userPair = catPairRepository.findById(catPairId).get();
+        if (catPairs.contains(userPair)){
+            throw new IllegalArgumentException("Repeated pair of cats");
+        }
         catPairs.add(userPair);
         userRepository.save(user);
     }
