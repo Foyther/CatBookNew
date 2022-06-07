@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:display="http://www.w3.org/1999/xhtml"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Mimimimetr!</title>
+</head>
+<body>
+<h1 style="text-align: center;"><span style="color: #1fe0e0;">Mimimimetr!</span></h1>
+<h2 style="text-align: center;"><span style="color: #0c2a2a;">Top-10 cats rating</span></h2>
+<p>
+<form style="text-align: center;"
+      th:object="${chosenImageInfo}"
+      th:action="@{/chosen}"
+      method="post">
+    <input type="hidden" th:value="${catPairId}" th:name="catPairId"/>
+    <button th:type="text" th:value="${first_cat.id}" th:name="choosedCatId">
+        <img th:src="${first_cat.photoUrl}"
+             width="256" height="256" th:title="${first_cat.name}"></button>
+
+    <button th:type="text" th:value="${second_cat.id}" th:name="choosedCatId">
+        <img th:src="${second_cat.photoUrl}"
+             width="256" height="256" th:title="${second_cat.name}"></button>
+    </p>
+    </br>
+    <span style="padding-left:120px;">
+        <button th:type="text" th:value="${first_cat.id}" th:name="chosenCatId" th:text="${first_cat.name}"></button>
+    </span>
+    <span style="padding-left:250px;">
+        <button th:type="text" th:value="${second_cat.id}" th:name="chosenCatId" th:text="${second_cat.name}"></button>
+    </span>
+</form>
+</body>
+</html>

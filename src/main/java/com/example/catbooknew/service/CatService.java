@@ -5,12 +5,9 @@ import com.example.catbooknew.repository.CatRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 @AllArgsConstructor
 public class CatService {
-
     private CatRepository catRepository;
 
     public void updateCatRating(Integer catId){

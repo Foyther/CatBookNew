@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:display="http://www.w3.org/1999/xhtml"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Mimimimetr!</title>
+</head>
+<body>
+<h1 style="text-align: center;"><span style="color: #1fe0e0;">Mimimimetr!</span></h1>
+<h2 style="text-align: center;"><span style="color: #0c2a2a;">Top-10 cats rating</span></h2>
+<p>
+<div style="text-align: center;">
+    <table
+            class="table table-hover">
+        <thead>
+        <tr>
+            <th>Position</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Voices</th>
+        </tr>
+        </thead>
+        <body>
+        <tr th:each="cats, iter : ${top_ten}">
+            <td th:text="${iter.index+1}"></td>
+            <td><img th:src="${cats.photoUrl}" width="256" height="256"></td>
+            <td th:text="${cats.name}"></td>
+            <td th:text="${cats.numOfVoices}"></td>
+        </tr>
+        </body>
+    </table>
+</div>
+</body>
+</html>
