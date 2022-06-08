@@ -18,10 +18,19 @@ public class User implements Serializable {
 
     @NotNull
     @Column(name = "name")
-    private String name;
+    private String username;
+
+    @NotNull
+    private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<CatPair> catPairs;
+
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
+
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
 
     public User() {
     }

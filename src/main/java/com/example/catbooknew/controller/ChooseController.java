@@ -62,6 +62,6 @@ public class ChooseController {
         }
         userService.chosenPairForUser(optionalUser.get(), catPairId);
         catService.updateCatRating(chosenCatId);
-        return "choose";
+        return "redirect:" + MvcUriComponentsBuilder.fromMappingName("CC#showCats").build();
     }
 }

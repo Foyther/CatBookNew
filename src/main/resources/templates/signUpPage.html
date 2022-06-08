@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Mimimimetr!</title>
+</head>
+<body>
+<h1 style="text-align: center;"><span style="color: #1fe0e0;">Mimimimetr!</span></h1>
+<h2 style="text-align: center;"><span style="color: #0c2a2a;">Sign Up</span></h2>
+<p>
+
+<form style="text-align: center;"
+      th:action="@{/registration}"
+      method="post">
+    <div th:if="${messages}">
+        Invalid username or password.
+    </div>
+    <div><label> User Name : <input type="text" name="name"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign Up"/></div>
+</form>
+</body>
+</html>

@@ -16,4 +16,6 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query(value = "SELECT c.id FROM User u JOIN u.catPairs c WHERE u.id = :userId")
     Set<Integer> findCatPairsIdByUserId(Integer userId);
+
+    Optional<User> findByUsername(String name);
 }
