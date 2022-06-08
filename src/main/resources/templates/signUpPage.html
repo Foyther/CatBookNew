@@ -5,10 +5,28 @@
     <title>Mimimimetr!</title>
 </head>
 <body>
-<h1 style="text-align: center;"><span style="color: #1fe0e0;">Mimimimetr!</span></h1>
+<h1 style="text-align: center;">
+    <span style="color: #1fe0e0;">
+        <a href="/"  style="text-decoration: none">Mimimimetr!</a>
+    </span>
+</h1>
 <h2 style="text-align: center;"><span style="color: #0c2a2a;">Sign Up</span></h2>
 <p>
-
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 18px;" border="1">
+    <tbody>
+    <tr style="height: 18px;">
+        <td style="width: 25%; height: 18px; text-align: center;">
+            <a href="/sign-in"  style="text-decoration: none">Sign - In</a></td>
+        <td style="width: 25%; height: 18px; text-align: center;">
+            <a href="/sign-up"  style="text-decoration: none">Sign - Up</a></td>
+        <td style="width: 25%; height: 18px; text-align: center;">
+            <a href="/choose"  style="text-decoration: none">Choose cat</a></td>
+        <td style="width: 25%; height: 18px; text-align: center;">
+            <a href="/rating"  style="text-decoration: none">Rating</a></td>
+    </tr>
+    </tbody>
+</table>
+</br>
 <form style="text-align: center;"
       th:action="@{/registration}"
       method="post">

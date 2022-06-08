@@ -2,8 +2,6 @@ package com.example.catbooknew.repository;
 
 import com.example.catbooknew.dto.Cat;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +13,5 @@ public interface CatRepository extends JpaRepository<Cat, Integer> {
     @Override
     <S extends Cat> S save(S entity);
 
-    @Query(value = "SELECT c FROM Cat c ORDER BY c.numOfVoices DESC")
-    Optional<List<Cat>> getCatOrderedByNumOfVoices();
-
-    Optional<List<Cat>> findByOrderByNumOfVoices();
+    Optional<List<Cat>> findByOrderByNumOfVoicesDesc();
 }

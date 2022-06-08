@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Mimimimetr!</title>
 </head>
-<body>
 <h1 style="text-align: center;">
     <span style="color: #1fe0e0;">
         <a href="/"  style="text-decoration: none">Mimimimetr!</a>
     </span>
-</h1><p>
+</h1>
+<body>
 <table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 18px;" border="1">
     <tbody>
     <tr style="height: 18px;">
@@ -24,24 +24,8 @@
     </tr>
     </tbody>
 </table>
-
 </br>
-<div th:if="${param.error}">
-    <span style="color: #f10404;">
-    Invalid username or password.
-    </span>
-</div>
-<div th:if="${param.logout}">
-    <span style="color: #0447f3;">
-    You have been logged out.
-    </span>
-</div>
-<form style="text-align: center;"
-      th:action="@{/sign-in}"
-      method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
+</br>
+<h1 style="text-align: center;"><strong>WELCOME</strong></h1>
 </body>
 </html>
