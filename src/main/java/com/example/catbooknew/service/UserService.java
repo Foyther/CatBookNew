@@ -17,7 +17,8 @@ public class UserService {
 
     public void updateChosenPairForUser(User user, Integer catPairId){
         Set<CatPair> catPairs = user.getCatPairs();
-        CatPair userPair = catPairRepository.findById(catPairId).get();
+        CatPair userPair = catPairRepository.findById(catPairId)
+                .orElseThrow(() -> new IllegalArgumentException("Pair of cats don't supported by id = " + catPairId));
         if (catPairs.contains(userPair)){
             throw new IllegalArgumentException("Repeated pair of cats");
         }
