@@ -23,10 +23,7 @@ public class CatService {
     }
 
     public List<Cat> findByOrderByNumOfVoicesDesc() {
-        return catRepository.findByOrderByNumOfVoicesDesc()
-                .orElseThrow(() -> new IllegalArgumentException("Cat's rating is not available"))
-                .stream()
-                .limit(10)
-                .toList();
+        return catRepository.findTop10ByOrderByNumOfVoicesDesc()
+                .orElseThrow(() -> new IllegalArgumentException("Cat's rating is not available"));
     }
 }
