@@ -13,5 +13,5 @@ public interface CatRepository extends JpaRepository<Cat, Integer> {
     @Override
     <S extends Cat> S save(S entity);
 
-    Optional<List<Cat>> findTop10ByOrderByNumOfVoicesDesc();
+    List<Cat> findTop10ByOrderByNumOfVoicesDesc();
 }

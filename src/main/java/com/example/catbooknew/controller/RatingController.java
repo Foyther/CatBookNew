@@ -17,7 +17,7 @@ public class RatingController {
     private CatService catService;
     @GetMapping
     public String showRating(ModelMap map) {
-        List<Cat> cats = catService.findByOrderByNumOfVoicesDesc();
+        List<Cat> cats = catService.findTop10ByOrderByNumOfVoicesDesc();
         map.put("top_ten", cats);
         return "showRating";
     }
