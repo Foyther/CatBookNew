@@ -37,6 +37,10 @@ public class UserService {
                 .orElseThrow(() -> new IllegalArgumentException("User doesn't exist"));
     }
 
+    public boolean userExistByUsername(String username) {
+        return userRepository.findByUsername(username).isPresent();
+    }
+
     public void save(User user) {
         if (user == null){
             throw new IllegalArgumentException("Can't to update empty user");

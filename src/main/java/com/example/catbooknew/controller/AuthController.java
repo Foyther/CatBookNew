@@ -38,13 +38,12 @@ public class AuthController {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException();
         }
-
-        User user = userService.findByUsername(name);
-        if (user != null) {
+        
+        if (userService.userExistByUsername(name)) {
             return "redirect:/sign-up";
         }
 
-        user = new User();
+        User user = new User();
         user.setUsername(name);
         user.setRole(Role.USER);
         user.setPassword(passwordEncoder.encode(password));
