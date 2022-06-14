@@ -1,14 +1,14 @@
 INSERT INTO cat (name, num_of_voices, photo_url)
-values ('Vasya', 0, 'src/main/resources/images/cat1.jpeg'),
-       ('John', 0, 'src/main/resources/images/cat2.jpeg'),
-       ('Conor', 0, 'src/main/resources/images/cat3.jpeg'),
-       ('Matilda', 0, 'src/main/resources/images/cat4.jpeg'),
-       ('Leopold', 0, 'src/main/resources/images/cat5.jpeg'),
-       ('Kasper', 0, 'src/main/resources/images/cat6.jpeg'),
-       ('Tom', 0, 'src/main/resources/images/cat7.jpeg'),
-       ('Garfild', 0, 'src/main/resources/images/cat8.jpeg'),
-       ('Symon', 0, 'src/main/resources/images/cat9.jpeg'),
-       ('Sins', 0, 'src/main/resources/images/cat10.jpeg');
+values ('Vasya', 0, '/images/cat1.jpeg'),
+       ('John', 0, '/images/cat2.jpeg'),
+       ('Conor', 0, '/images/cat3.jpeg'),
+       ('Matilda', 0, '/images/cat4.jpeg'),
+       ('Leopold', 0, '/images/cat5.jpeg'),
+       ('Kasper', 0, '/images/cat6.jpeg'),
+       ('Tom', 0, '/images/cat7.jpeg'),
+       ('Garfild', 0, '/images/cat8.jpeg'),
+       ('Symon', 0, '/images/cat9.jpeg'),
+       ('Sins', 0, '/images/cat10.jpeg');
 
 INSERT INTO cat_pairs (first_cat_id, second_cat_id)
 values (1,2), (1,3),(1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10),
